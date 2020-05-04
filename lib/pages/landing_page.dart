@@ -9,16 +9,14 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
- 
-
   @override
   Widget build(BuildContext context) {
-     List<Widget> newsCardList = [
-    NewsScrollCard( newsList[0]),
-    NewsScrollCard(newsList[1]),
-    NewsScrollCard(newsList[0]),
-    NewsScrollCard(newsList[1]),
-  ];
+    List<Widget> newsCardList = [
+      NewsScrollCard(newsList[0]),
+      NewsScrollCard(newsList[1]),
+      NewsScrollCard(newsList[0]),
+      NewsScrollCard(newsList[1]),
+    ];
     return Scaffold(
       body: Container(
         width: double.infinity,
@@ -39,49 +37,47 @@ class _LandingPageState extends State<LandingPage> {
             mainAxisSize: MainAxisSize.max,
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.all(12.0),
+                padding: const EdgeInsets.only(top:20.0, bottom: 0),
                 child: Text(
                   'NEWS',
                   textAlign: TextAlign.center,
                   style: kHeadingTextStyle,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 7, vertical: 7),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      Icon(Icons.search, color: kTransparentIconColor),
-                      Expanded(
-                          flex: 15,
-                          child: Text(
-                            '  Search Stories',
-                            style: kSearchBarTextStyle,
-                          )),
-                      Flexible(
-                        child: IconButton(
-                          
-                          padding: EdgeInsets.all(0),
-                          alignment: Alignment.centerRight,
-                          icon: Icon(
-                            Icons.mic,
-                            color: kTransparentIconColor,
-                          ),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 7),
+                margin:
+                    const EdgeInsets.only(bottom: 20.0, left: 5, right: 5, top: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Icon(Icons.search, color: kTransparentIconColor),
+                    Expanded(
+                        flex: 15,
+                        child: Text(
+                          '  Search Stories',
+                          style: kSearchBarTextStyle,
+                        )),
+                    Flexible(
+                      child: IconButton(
+                        padding: EdgeInsets.only(right: 0),
+                        alignment: Alignment.centerRight,
+                        icon: Icon(
+                          Icons.mic,
+                          color: kTransparentIconColor,
                         ),
                       ),
-                    ],
-                  ),
-                  constraints: BoxConstraints.tightFor(
-                    height: 35,
-                    width: double.infinity,
-                  ),
-                  decoration: BoxDecoration(
-                    color: Color(0x3affffff),
-                    borderRadius: BorderRadius.circular(25),
-                  ),
+                    ),
+                  ],
+                ),
+                constraints: BoxConstraints.tightFor(
+                  height: 35,
+                  width: double.infinity,
+                ),
+                decoration: BoxDecoration(
+                  color: Color(0x3affffff),
+                  borderRadius: BorderRadius.circular(25),
                 ),
               ),
               Expanded(
@@ -101,10 +97,14 @@ class _LandingPageState extends State<LandingPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     Expanded(
-                        child:
-                            NavigationButton(onNavigate: (){setState(() {
-                              newsCardList.add(NewsScrollCard(newsList[1]));
-                            });}, label: 'HOME', icon: Icons.sort)),
+                        child: NavigationButton(
+                            onNavigate: () {
+                              setState(() {
+                                newsCardList.add(NewsScrollCard(newsList[1]));
+                              });
+                            },
+                            label: 'HOME',
+                            icon: Icons.sort)),
                     Expanded(
                       child: NavigationButton(
                         label: 'BOOKMARKS',

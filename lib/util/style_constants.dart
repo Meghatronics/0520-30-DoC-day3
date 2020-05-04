@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 const double kNewsScrollCardHeight = 200;
 const double kNavigationBarHeight = 60;
 const TextOverflow kNewsScrollCardBodyOverflow = TextOverflow.fade;
-const int kNewsScrollCardBodyMaxLines = 7;
+const int kNewsScrollCardBodyMaxLines = 5;
 const TextOverflow kNewsScrollCardHeadlineOverflow = TextOverflow.ellipsis;
 const int kNewsScrollCardHeadlineMaxLines = 2;
 //Colors

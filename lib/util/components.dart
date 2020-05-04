@@ -71,7 +71,7 @@ class NewsScrollCard extends StatelessWidget {
             context, MaterialPageRoute(builder: (context) => NewsPage(news)));
       },
       child: AnimatedContainer(
-        padding: EdgeInsets.all(8.0),
+        padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
         margin: EdgeInsets.symmetric(vertical: 4.0),
         height: kNewsScrollCardHeight,
         decoration: BoxDecoration(
@@ -122,7 +122,7 @@ class NewsScrollCard extends StatelessWidget {
                   color: kGradientColor2,
                   image: DecorationImage(image: NetworkImage('https://picsum.photos/150/300'), fit: BoxFit.cover),
                   borderRadius: BorderRadius.only(
-                    topLeft: Radius.elliptical(70, 70),
+                    topLeft: Radius.circular(10),
                     topRight: Radius.circular(10),
                     bottomLeft: Radius.circular(10),
                     bottomRight: Radius.circular(10),
