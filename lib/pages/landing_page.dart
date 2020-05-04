@@ -9,19 +9,21 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
-  List<Widget> newsCardList = [
-    NewsScrollCard( newsList[0]),
-    NewsScrollCard(newsList[0]),
-    NewsScrollCard(newsList[0]),
-    NewsScrollCard(newsList[0]),
-  ];
+ 
 
   @override
   Widget build(BuildContext context) {
+     List<Widget> newsCardList = [
+    NewsScrollCard( newsList[0]),
+    NewsScrollCard(newsList[1]),
+    NewsScrollCard(newsList[0]),
+    NewsScrollCard(newsList[1]),
+  ];
     return Scaffold(
       body: Container(
         width: double.infinity,
         height: double.infinity,
+        padding: EdgeInsets.symmetric(horizontal: 4),
         decoration: BoxDecoration(
             gradient: LinearGradient(
           colors: [
@@ -47,7 +49,7 @@ class _LandingPageState extends State<LandingPage> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 7),
+                  padding: EdgeInsets.symmetric(horizontal: 7, vertical: 7),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -61,11 +63,7 @@ class _LandingPageState extends State<LandingPage> {
                           )),
                       Flexible(
                         child: IconButton(
-                          onPressed: (){
-                              setState(() {
-                                
-                              });
-                          },
+                          
                           padding: EdgeInsets.all(0),
                           alignment: Alignment.centerRight,
                           icon: Icon(
@@ -87,10 +85,7 @@ class _LandingPageState extends State<LandingPage> {
                 ),
               ),
               Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                  child: ListView(children: newsCardList),
-                ),
+                child: ListView(children: newsCardList),
               )
             ],
           ),
@@ -107,7 +102,9 @@ class _LandingPageState extends State<LandingPage> {
                   children: <Widget>[
                     Expanded(
                         child:
-                            NavigationButton(label: 'HOME', icon: Icons.sort)),
+                            NavigationButton(onNavigate: (){setState(() {
+                              newsCardList.add(NewsScrollCard(newsList[1]));
+                            });}, label: 'HOME', icon: Icons.sort)),
                     Expanded(
                       child: NavigationButton(
                         label: 'BOOKMARKS',

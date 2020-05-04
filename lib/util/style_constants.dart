@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-const double kNewsScrollCardHeight = 250;
+const double kNewsScrollCardHeight = 200;
 const double kNavigationBarHeight = 60;
 const TextOverflow kNewsScrollCardBodyOverflow = TextOverflow.fade;
 const int kNewsScrollCardBodyMaxLines = 7;
+const TextOverflow kNewsScrollCardHeadlineOverflow = TextOverflow.ellipsis;
+const int kNewsScrollCardHeadlineMaxLines = 2;
 //Colors
 const Color kGradientColor1 = Color(0xff1B1C32);
 const Color kGradientColor2 = Color(0xff08A1A6);
-
 const Color kTransparentIconColor = Colors.white60;
 const Color kNewsScrollCardForeColor = Color(0xaaffffff);
 const Color kNewsScrollCardShadowColor = Color(0x30000000);
@@ -16,7 +17,6 @@ const Color kNavigationButtonActiveIconColor = Color(0x80000000);
 const Color kNavigationButtonActiveTextColor = Color(0x80000000);
 const Color kNavigationButtonInactiveIconColor = Color(0x30000000);
 const Color kNavigationButtonInactiveTextColor = Color(0x30000000);
-
 //Text Styles
 final kHeadingTextStyle = GoogleFonts.quicksand(
   letterSpacing: 3,
@@ -36,6 +36,7 @@ final kNewsScrollCardHeadlineStyle = GoogleFonts.quicksand(
 );
 
 final kNewsScrollCardBodyStyle = GoogleFonts.quicksand(
+  height: 1,
   letterSpacing: 0,
   fontSize: 15,
   color: Colors.black54,
@@ -47,4 +48,9 @@ final kNewsScrollCardDateStyle = GoogleFonts.quicksand(
   color: Colors.black54,
 );
 
+final kNewsBodyTextStyle = GoogleFonts.quicksand(
+  letterSpacing: 0,
+  fontSize: 20,
+  color: Colors.black87,
+);
 //
