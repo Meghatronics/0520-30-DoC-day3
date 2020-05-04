@@ -3,7 +3,7 @@
 A flutter project for scrolling and reading news.
 UI inspirations from dribbble.
 
-###App Screens
+### App Screens
 
 <img src="AppImages/newsListA.jpg" width = "300">
 
